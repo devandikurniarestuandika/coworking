@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/ImAiiR/QobuzDownloaderX">
+  <a href="https://vandi.id">
     <img src="https://raw.githubusercontent.com/devandikurniarestuandika/icon/master/logo.png?raw=true" />
   </a>
 </p>
