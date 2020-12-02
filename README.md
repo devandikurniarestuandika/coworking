@@ -1,6 +1,9 @@
 <p align="center">
-  <br>
-  <br>
+  <a href="https://github.com/ImAiiR/QobuzDownloaderX">
+    <img src="https://raw.githubusercontent.com/devandikurniarestuandika/icon/master/logo.png?raw=true" />
+  </a>
+</p>
+<p align="center">
   <a href="http://amikom.ac.id/"><img src="https://raw.githubusercontent.com/devandikurniarestuandika/icon/master/perpuslite/amikomstyle.svg"></a><a href="http://amikom.ac.id/"><img src="https://raw.githubusercontent.com/devandikurniarestuandika/icon/master/perpuslite/amikomblack.svg"></a>
   <br>
   <br>
