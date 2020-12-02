@@ -16,4 +16,6 @@ Tugas Proyek E-Commerce dihost disini | NIM : 18.12.0882
 ## SCREENSHOT LAYAR WEBSITE
 
 1. Halaman Login (Admin)
+<a href="javascript:void(0)">
 <img src="https://raw.githubusercontent.com/devandikurniarestuandika/coworking/main/Screenshot/login.png?raw=true" width="600" />
+</a>
