@@ -13,6 +13,10 @@
 
 Tugas Proyek E-Commerce dihost disini | NIM : 18.12.0882
 
+## UPDATE HISTORY
+
+- V1.0 Login Admin Fix
+
 ## SCREENSHOT LAYAR WEBSITE
 
 1. Halaman Login (Admin)
