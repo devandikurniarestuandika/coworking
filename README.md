@@ -17,7 +17,7 @@ Tugas Proyek E-Commerce dihost disini | NIM : 18.12.0882
 
 - V1.0 Login Admin Fix
 
-## SCREENSHOT LAYAR WEBSITE
+## CUPLIKAN LAYAR WEBSITE
 
 1. Halaman Login (Admin)
 <img src="https://raw.githubusercontent.com/devandikurniarestuandika/coworking/main/Screenshot/login.png" width="600"/>
