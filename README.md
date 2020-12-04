@@ -26,3 +26,7 @@ Tugas Proyek E-Commerce dihost disini | NIM : 18.12.0882
 2. Halaman Login (Pelanggan)
 <img src="https://raw.githubusercontent.com/devandikurniarestuandika/coworking/main/Screenshot/login-pelanggan.png" width="600"/>
 </a>
+
+3. Halaman Dasbor (Admin-Pemilik)
+<img src="https://raw.githubusercontent.com/devandikurniarestuandika/coworking/main/Screenshot/dash-admin.png" width="600"/>
+</a>
