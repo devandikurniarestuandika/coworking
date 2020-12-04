@@ -16,6 +16,7 @@ Tugas Proyek E-Commerce dihost disini | NIM : 18.12.0882
 ## UPDATE HISTORY
 
 - V1.0 Login Admin Fix
+- V1.0.0.1.41220 Admin Dashboard Added
 
 ## CUPLIKAN LAYAR WEBSITE
 
