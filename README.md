@@ -31,3 +31,8 @@ Tugas Proyek E-Commerce dihost disini | NIM : 18.12.0882
 3. Halaman Dasbor (Admin-Pemilik)
 <img src="https://raw.githubusercontent.com/devandikurniarestuandika/coworking/main/Screenshot/dash-admin.png" width="600"/>
 </a>
+
+4. Halaman Pengelolaan Staff
+<img src="https://raw.githubusercontent.com/devandikurniarestuandika/coworking/main/Screenshot/dash-staff.png" width="600"/>
+</a>
+
