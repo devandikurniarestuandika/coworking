@@ -41,24 +41,60 @@ class Login{
     $ses_sql = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($ses_sql);
     $_SESSION["id"] = $row["id"];
+    $_SESSION["no_ktp"] = $row["no_ktp"];
     $_SESSION["nama"] = $row["nama"];
+    $_SESSION["password"] = $row["password"];
     $_SESSION["role"] = $row["role"];
+    $_SESSION["status"] = $row["status"];
+    $_SESSION["foto"] = $row["foto"];
+    $_SESSION["created_at"] = $row["created_at"];
   }
   public function UserType(){
-    //if user role is 1, redirect to admin page
-    if ($_SESSION["role"] == 1) {
-      header("Location:../p/1/");
-    }
-    //if user role is 0, redirect to user page
-    if ($_SESSION["role"] == 0) {
-      header("Location:../p/0/");
-    }
+      //if user role is 1, redirect to admin page
+      if ($_SESSION["role"] == 1) {
+        header("Location:../user/admindash/");
+      }
+      //if user role is 0, redirect to karyawan page
+      if ($_SESSION["role"] == 0) {
+        header("Location:../user/dashboard/");
+      }
   }
 }
-class UserFunctions{
-  public function UserName(){
-    $username = $_SESSION["nama"];
-    echo $username;
+
+class IdFunctions{
+  public function Id(){
+    $id = $_SESSION["id"];
+    echo $id;
+  }
+}
+class KtpFunctions{
+  public function Ktp(){
+    $ktp = $_SESSION["no_ktp"];
+    echo $ktp;
+  }
+}
+class NamaFunctions{
+  public function Nama(){
+    $nama = $_SESSION["nama"];
+    echo $nama;
+  }
+}
+class PassFunctions{
+  public function Pass(){
+    $pass = $_SESSION["password"];
+    echo $pass;
+  }
+}
+class FotoFunctions{
+  public function Foto(){
+    $foto = $_SESSION["foto"];
+    echo $foto;
+  }
+}
+class CreatedatFunctions{
+  public function Createdat(){
+    $createdat = $_SESSION["created_at"];
+    echo $createdat;
   }
 }
 ?>
