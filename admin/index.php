@@ -71,19 +71,10 @@
                         <!-- Form start -->
                         <form action="includes/login.php" method="POST">
                             <div class="form-group">
-                                <input type="text" name="username" class="input-text" placeholder="Nama Pengguna">
+                                <input type="text" required="" name="username" class="input-text" placeholder="Nama Pengguna">
                             </div>
                             <div class="form-group">
-                                <input type="password" name="password" class="input-text" placeholder="Kata Sandi">
-                            </div>
-                            <div class="checkbox">
-                                <div class="ez-checkbox pull-left">
-                                    <label>
-                                        <input type="checkbox" class="ez-hide">
-                                        Masuk otomatis
-                                    </label>
-                                </div>
-                                <div class="clearfix"></div>
+                                <input type="password" required="" name="password" class="input-text" placeholder="Kata Sandi">
                             </div>
                             <div class="mb-0">
                                 <button type="submit" class="btn-md btn-theme btn-block" name="submit">masuk</button>

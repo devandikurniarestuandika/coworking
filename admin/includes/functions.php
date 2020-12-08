@@ -52,11 +52,11 @@ class Login{
   public function UserType(){
       //if user role is 1, redirect to admin page
       if ($_SESSION["role"] == 1) {
-        header("Location:../user/admindash/");
+        header("Location:../user/admindash/index.php?halaman=beranda");
       }
       //if user role is 0, redirect to karyawan page
       if ($_SESSION["role"] == 0) {
-        header("Location:../user/dashboard/");
+        header("Location:../user/dashboard/index.php?halaman=beranda");
       }
   }
 }
