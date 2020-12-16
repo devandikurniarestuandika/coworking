@@ -20,9 +20,7 @@ Tugas Proyek E-Commerce dan Pemrogramman dihost disini | NIM : 18.12.0882
 
 ## DEMO WEBSITE
 
-Website:
-<br>Server Indo: https://tpe.cdn.vandiku.com/
-<br>Server UK: https://vandi.xyz/
+Website: https://tpe.cdn.vandiku.com/
 <br>Minta akses admin? Hubungi kami ke https://www.vandi.id/p/kontak.html
 
 ## CUPLIKAN LAYAR WEBSITE
