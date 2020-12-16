@@ -18,6 +18,10 @@ Tugas Proyek E-Commerce dan Pemrogramman dihost disini | NIM : 18.12.0882
 - V1.0 Login Admin Fix
 - V1.0.0.1.91220 Admin Dashboard + Staff Functional Added
 
+## DEMO WEBSITE
+
+Website: https://tpe.cdn.vandiku.com/
+
 ## CUPLIKAN LAYAR WEBSITE
 
 1. Halaman Login (Admin)
