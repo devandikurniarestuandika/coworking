@@ -16,7 +16,7 @@ Tugas Proyek E-Commerce dan Pemrogramman dihost disini | NIM : 18.12.0882
 ## UPDATE HISTORY
 
 - V1.0 Login Admin Fix
-- V1.0.0.1.91220 Admin Dashboard + Staff Functional Added
+- V1.0.0.1.221220 Admin Dashboard + Members Functional Added
 
 ## DEMO WEBSITE
 
