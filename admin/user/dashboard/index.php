@@ -1,5 +1,7 @@
-<?php include 'settings.php'; //include settings ?>
+<?php include '__settings.php'; //include settings ?>
+<?php require_once('../../../lib/base64encrypted.php'); ?>
 <?php define('Index', TRUE); ?>
+<?php $alert = 0; ?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- BEGIN HEAD -->
@@ -17,6 +19,9 @@
 	<!--bootstrap -->
 	<link href="../../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="../../../assets/plugins/summernote/summernote.css" rel="stylesheet">
+	<link href="../../../assets/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet"
+        media="screen">
+    <link href="../../../assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" media="screen">
 	<!-- morris chart -->
 	<link href="../../../assets/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
 	<!-- Material Design Lite CSS -->
@@ -32,6 +37,11 @@
 	<link href="../../../assets/css/style.css" rel="stylesheet" type="text/css" />
 	<link href="../../../assets/css/responsive.css" rel="stylesheet" type="text/css" />
 	<link href="../../../assets/css/theme-color.css" rel="stylesheet" type="text/css" />
+	<link href="../../../assets/css/pages/formlayout.css" rel="stylesheet" type="text/css" />
+	<!--tagsinput-->
+    <link href="../../../assets/plugins/jquery-tags-input/jquery-tags-input.css" rel="stylesheet">
+	<!-- Date Time item CSS -->
+	<link rel="stylesheet" href="../../../assets/plugins/flatpicker/flatpickr.min.css">
 	<!-- favicon -->
 	<link rel="shortcut icon" href="../../../img/favicon.ico" />
 </head>
@@ -45,7 +55,7 @@
 			<div class="page-header-inner ">
 				<!-- logo start -->
 				<div class="page-logo">
-					<a href="index.php?halaman=home">
+					<a href="index.php?halaman=beranda">
 						<img alt="" src="../../../img/logos/logos.png">
 						<span class="logo-default">CowSpe</span> </a>
 				</div>
@@ -139,7 +149,7 @@
 										</li>
 									</ul>
 									<div class="dropdown-menu-footer">
-										<a href="index.php?halaman=home"> All notifications </a>
+										<a href="index.php?halaman=beranda"> All notifications </a>
 									</div>
 								</li>
 							</ul>
@@ -163,7 +173,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="index.php?halaman=home">
+									<a href="index.php?halaman=beranda">
 										<i class="icon-directions"></i> Help
 									</a>
 								</li>
@@ -174,7 +184,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="logout.php">
+									<a href="index.php?halaman=log-keluar">
 										<i class="icon-logout"></i> Log Keluar </a>
 								</li>
 							</ul>
@@ -210,7 +220,7 @@
 								</div>
 							</li>
 							<li class="nav-item">
-								<a href="index.php?halaman=home" class="nav-link nav-toggle"> <i class="material-icons">dashboard</i>
+								<a href="index.php?halaman=beranda" class="nav-link nav-toggle"> <i class="material-icons">dashboard</i>
 									<span class="title">Dasbor Utama</span>
 								</a>
 							</li><li class="nav-item">
@@ -219,13 +229,23 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a href="index.php?halaman=home" class="nav-link nav-toggle"> <i class="material-icons">account_circle</i>
+								<a href="index.php?halaman=beranda" class="nav-link nav-toggle"> <i class="material-icons">account_circle</i>
 									<span class="title">Members</span>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a href="index.php?halaman=home" class="nav-link nav-toggle"> <i class="material-icons">attach_money</i>
+								<a href="index.php?halaman=beranda" class="nav-link nav-toggle"> <i class="material-icons">restaurant_menu</i>
+									<span class="title">Produk</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="index.php?halaman=beranda" class="nav-link nav-toggle"> <i class="material-icons">attach_money</i>
 									<span class="title">Keuangan</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="index.php?halaman=beranda" class="nav-link nav-toggle"> <i class="material-icons">account_balance_wallet</i>
+									<span class="title">EPay</span>
 								</a>
 							</li>
 							<li class="nav-item">
@@ -314,17 +334,35 @@
 				<?php
 					if(isset($_GET["halaman"])){
 						if($_GET["halaman"] == "profil-pengguna"){
-							include 'user-profile.php';
+							include '__user-profile.php';
 						}
-						elseif($_GET["halaman"] == "home"){
-							include 'home.php';
+						elseif($_GET["halaman"] == "beranda"){
+							include '__home.php';
 						}
 						elseif($_GET["halaman"] == "staff"){
-							include '_staff/index.php';
+							include '_staff/__index.php';
+						}
+						elseif($_GET["halaman"] == "staff-tambah"){
+							include '_staff/__tambah.php';
+						}
+						elseif($_GET["halaman"] == "staff-edit"){
+							include '_staff/__edit.php';
+						}
+						elseif($_GET["halaman"] == "staff-hapus"){
+							include '_staff/__hapus.php';
+						}
+						elseif($_GET["halaman"] == "staff-ok"){
+							include '_staff/__hapus-confirm.php';
+						}
+						elseif($_GET["halaman"] == "tutup-akun"){
+							include '__locked.php';
+						}
+						elseif($_GET["halaman"] == "log-keluar"){
+							echo "<script>location='../../includes/logout.php';</script>";
 						}
 					}
 					else{
-						include 'home.php';
+						include '__home.php';
 					}
 				?>
 				</div>
@@ -351,6 +389,11 @@
 	<script src="../../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 	<script src="../../../assets/plugins/sparkline/jquery.sparkline.min.js"></script>
 	<script src="../../../assets/js/pages/sparkline/sparkline-data.js"></script>
+	<script src="../../../assets/plugins/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+    <script src="../../../assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+    <script src="../../../assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker-init.js"></script>
+    <script src="../../../assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script src="../../../assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker-init.js"></script>
 	<!-- Common js-->
 	<script src="../../../assets/js/app.js"></script>
 	<script src="../../../assets/js/layout.js"></script>
@@ -367,6 +410,12 @@
 	<script src="../../../assets/plugins/morris/morris.min.js"></script>
 	<script src="../../../assets/plugins/morris/raphael-min.js"></script>
 	<script src="../../../assets/js/pages/chart/morris/morris_home_data.js"></script>
+	<!--tags input-->
+    <script src="../../../assets/plugins/jquery-tags-input/jquery-tags-input.js"></script>
+    <script src="../../../assets/plugins/jquery-tags-input/jquery-tags-input-init.js"></script>
+	<!-- date and time 	 -->
+	<script src="../../../assets/plugins/flatpicker/flatpickr.min.js"></script>
+	<script src="../../../assets/js/pages/datetime/datetime-data.js"></script>
 	<!-- end js include path -->
 </body>
 

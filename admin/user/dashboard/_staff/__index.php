@@ -34,11 +34,7 @@ if(!defined('Index')) {
 								<div class="card-body ">
 									<div class="row p-b-20">
 										<div class="col-md-6 col-sm-6 col-6">
-											<div class="btn-group">
-												<a href="index.php?halaman=staff-tambah" id="addRow" class="btn btn-info">
-													Tambah Staff <i class="fa fa-plus"></i>
-												</a>
-											</div>
+											
 										</div>
 										<div class="col-md-6 col-sm-6 col-6">
 											<div class="btn-group pull-right">
@@ -64,7 +60,7 @@ if(!defined('Index')) {
 											</thead>
 											<tbody>
 												<?php $no=1; ?>
-												<?php $ambil = $conn->query("SELECT * FROM users ORDER BY username ASC") ?>
+												<?php $ambil = $conn->query("SELECT * FROM users WHERE role LIKE 0") ?>
 												<?php while($pecah = $ambil->fetch_assoc()): ?>
 												<tr class="odd gradeX">
 													<td class="user-circle-img">
@@ -92,18 +88,10 @@ if(!defined('Index')) {
 														</a>
 														<a href="#" class="btn btn-tbl-edit btn-xs">
 															<i class="fa fa-print"></i>
-														</a><?php
+														</a>
+														<?php
 														} else {
-															?><a href="index.php?halaman=staff-edit&id=<?php echo Base64_Encrypted::Crypter($pecah['id'], "My First Key", "My second Key", "My third Key", true, true); ?>" class="btn btn-tbl-edit btn-xs">
-															<i class="fa fa-pencil"></i>
-														</a>
-														<a href="index.php?halaman=tutup-akun&id=<?php echo Base64_Encrypted::Crypter($pecah['id'], "My First Key", "My second Key", "My third Key", true, true); ?>" class="btn btn-tbl-edit btn-xs">
-															<i class="fa fa-key"></i>
-														</a>
-														<a href="index.php?halaman=staff-hapus&id=<?php echo Base64_Encrypted::Crypter($pecah['id'], "My First Key", "My second Key", "My third Key", true, true); ?>" class="btn btn-tbl-delete btn-xs">
-															<i class="fa fa-trash-o"></i>
-														</a>
-														<a href="#" class="btn btn-tbl-edit btn-xs">
+															?><a href="#" class="btn btn-tbl-edit btn-xs">
 															<i class="fa fa-print"></i>
 														</a><?php
 														}

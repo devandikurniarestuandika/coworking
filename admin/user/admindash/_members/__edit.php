@@ -6,43 +6,43 @@ if(!defined('Index')) {
 <?php
 //Ambil Data
 $decrypt = Base64_Encrypted::Decrypter($_GET['id'], "My First Key", "My second Key", "My third Key", true, true);
-$ambil = $conn->query("SELECT * FROM users WHERE id= '$decrypt'");
+$ambil = $conn->query("SELECT * FROM members WHERE id= '$decrypt'");
 $pecah = $ambil->fetch_assoc();
 
 //Edit Data
 if(isset($_POST["kirim"])) {
     $iktp = $_POST['ktp'];
-    $iusername = $_POST['username'];
+	$iemail = $_POST['email'];
+	$itelp = $_POST['telepon'];
     $inama = $_POST['nama'];
 	$ipass = md5($_POST['password']);
 	$ikelahiran = date('Y-m-d', strtotime($_POST['kelahiran']));
 	$ikelamin = $_POST['kelamin'];
-    $iperan = $_POST['peran'];
 
-    $ambil = $conn->query("SELECT * FROM users WHERE username='$iusername'");
+    $ambil = $conn->query("SELECT * FROM members WHERE email='$iemail'");
 	$yangcocok = $ambil->num_rows;
 	if ($_POST['password'] == null) {
-		if ($iusername == $pecah['username']) {
-			$conn->query("UPDATE users SET no_ktp='$iktp', username='$iusername', nama='$inama', tgl_lahir='$ikelahiran', kelamin='$ikelamin', role='$iperan' WHERE id='$decrypt'");
-			echo "<script>window.location='index.php?halaman=staff';</script>";
+		if ($iemail == $pecah['email']) {
+			$conn->query("UPDATE members SET no_ktp='$iktp', email='$iemail', telepon='$itelp', nama='$inama', tgl_lahir='$ikelahiran', kelamin='$ikelamin' WHERE id='$decrypt'");
+			echo "<script>window.location='index.php?halaman=members';</script>";
 		} else {
 			if($yangcocok == 1){
 				$alert = 1;
 			} else {
-				$conn->query("UPDATE users SET no_ktp='$iktp', username='$iusername', nama='$inama', tgl_lahir='$ikelahiran', kelamin='$ikelamin', role='$iperan' WHERE id='$decrypt'");
-				echo "<script>window.location='index.php?halaman=staff';</script>";
+				$conn->query("UPDATE members SET no_ktp='$iktp', email='$iemail', telepon='$itelp', nama='$inama', tgl_lahir='$ikelahiran', kelamin='$ikelamin' WHERE id='$decrypt'");
+				echo "<script>window.location='index.php?halaman=members';</script>";
 			}
 		}
 	} else {
-		if ($iusername == $pecah['username']) {
-			$conn->query("UPDATE users SET no_ktp='$iktp', username='$iusername', nama='$inama', password='$ipass', tgl_lahir='$ikelahiran', kelamin='$ikelamin', role='$iperan' WHERE id='$decrypt'");
-			echo "<script>window.location='index.php?halaman=staff';</script>";
+		if ($iemail == $pecah['email']) {
+			$conn->query("UPDATE members SET no_ktp='$iktp', email='$iemail', telepon='$itelp', nama='$inama', password='$ipass', tgl_lahir='$ikelahiran', kelamin='$ikelamin' WHERE id='$decrypt'");
+			echo "<script>window.location='index.php?halaman=members';</script>";
 		} else {
 			if($yangcocok == 1){
 				$alert = 1;
 			} else {
-				$conn->query("UPDATE users SET no_ktp='$iktp', username='$iusername', nama='$inama', password='$ipass', tgl_lahir='$ikelahiran', kelamin='$ikelamin', role='$iperan' WHERE id='$decrypt'");
-				echo "<script>window.location='index.php?halaman=staff';</script>";
+				$conn->query("UPDATE members SET no_ktp='$iktp', email='$iemail', telepon='$itelp', nama='$inama', password='$ipass', tgl_lahir='$ikelahiran', kelamin='$ikelamin' WHERE id='$decrypt'");
+				echo "<script>window.location='index.php?halaman=members';</script>";
 			}
 		}
 	}
@@ -53,16 +53,16 @@ if(isset($_POST["kirim"])) {
 						<div class="page-title-breadcrumb">
 							<div class=" pull-left">
 								<div class="page-title">Perbarui Data <?php
-									$string = $pecah['nama'];
-									$PecahStr = explode(" ", $string);
-									echo $PecahStr[0];
-									?></div>
+								$string = $pecah['nama'];
+								$PecahStr = explode(" ", $string);
+								echo $PecahStr[0];
+								?></div>
 							</div>
 							<ol class="breadcrumb page-breadcrumb pull-right">
 								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
 										href="index.php?halaman=beranda">Dashboard</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
-								<li><a class="parent-item" href="index.php?halaman=staff">Staff</a>&nbsp;<i class="fa fa-angle-right"></i>
+								<li><a class="parent-item" href="index.php?halaman=members">Pelanggan</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
 								<li class="active">Ubah Data</li>
 							</ol>
@@ -72,7 +72,7 @@ if(isset($_POST["kirim"])) {
                     <div class="col-sm-12">
                     <?php if ($alert == 1) {
 								?><div class="alert alert-danger">
-								<strong>Galat!</strong> Nama Pengguna sudah terpakai.
+								<strong>Galat!</strong> Alamat email sudah terpakai.
 							</div><?php
 							} ?>
 							<div class="card card-box">
@@ -84,9 +84,14 @@ if(isset($_POST["kirim"])) {
 												value="<?php echo $pecah['no_ktp']; ?>" name="ktp">
                                         </div>
                                         <div class="form-group">
-											<label for="simpleFormEmail">Nama Pengguna</label>
-											<input required="" pattern=".{5,}" title="Mohon masukkan minimal setidaknya 5 karakter" maxlength="30" type="text" class="form-control" id="simpleFormEmail"
-												value="<?php echo $pecah['username']; ?>" name="username">
+											<label for="simpleFormEmail">Alamat Email</label>
+											<input required="" pattern=".{5,}" title="Mohon masukkan minimal setidaknya 5 karakter" maxlength="30" type="email" class="form-control" id="simpleFormEmail"
+												value="<?php echo $pecah['email']; ?>" name="email">
+                                        </div>
+										<div class="form-group">
+											<label for="simpleFormEmail">Telepon</label>
+											<input required="" pattern=".{8,}" title="Mohon masukkan nomor telepon dengan benar!" maxlength="30" type="text" class="form-control" id="simpleFormEmail"
+												value="<?php echo $pecah['telepon']; ?>" name="telepon">
                                         </div>
                                         <div class="form-group">
 											<label for="simpleFormEmail">Nama Lengkap</label>
@@ -124,20 +129,9 @@ if(isset($_POST["kirim"])) {
 											<input pattern=".{6,}" title="Mohon masukkan minimal setidaknya 6 karakter" type="password" class="form-control" id="simpleFormPassword"
 												placeholder="Kosongkan jika tidak ingin diganti" name="password">
                                         </div>
-                                        <div class="form-group">
-												<label>Pilih Peran</label>
-												<select class="form-control" name="peran">
-												<?php if ($pecah['role'] == 0) {
-													?><option value="0" selected>Staff</option><option value="1">Admin (Pemilik)</option><?php
-													} else {
-														?><option value="0">Staff</option><option value="1" selected>Admin (Pemilik)</option><?php
-													}
-												?>
-												</select>
-										</div>
 										<div class="col-lg-12 p-t-20 text-center">
 										<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 m-r-20 btn-pink" name="kirim">Kirim</button>
-										<a href="index.php?halaman=staff" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default">Tutup</a></div>
+										<a href="index.php?halaman=members" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default">Tutup</a></div>
 									</form>
 								</div>
 							</div>

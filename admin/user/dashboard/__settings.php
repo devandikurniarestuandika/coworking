@@ -14,7 +14,7 @@ $createdfunc = new CreatedatFunctions;
 $chss = new Login;
 $chss->SessionCheck();
 //Check user role is true
-if (!isset($_SESSION['username']) || $_SESSION['role'] != "1" || $_SESSION['status'] != "1") {
+if (!isset($_SESSION['username']) || $_SESSION['role'] != "0" || $_SESSION['status'] != "1") {
   header("Location:../../includes/logout.php");
 }
 ?>

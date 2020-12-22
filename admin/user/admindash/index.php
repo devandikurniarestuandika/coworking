@@ -19,6 +19,9 @@
 	<!--bootstrap -->
 	<link href="../../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="../../../assets/plugins/summernote/summernote.css" rel="stylesheet">
+	<link href="../../../assets/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet"
+        media="screen">
+    <link href="../../../assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" media="screen">
 	<!-- morris chart -->
 	<link href="../../../assets/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
 	<!-- Material Design Lite CSS -->
@@ -34,8 +37,9 @@
 	<link href="../../../assets/css/style.css" rel="stylesheet" type="text/css" />
 	<link href="../../../assets/css/responsive.css" rel="stylesheet" type="text/css" />
 	<link href="../../../assets/css/theme-color.css" rel="stylesheet" type="text/css" />
-	<!-- dropzone -->
-	<link href="../../../assets/plugins/dropzone/dropzone.css" rel="stylesheet" media="screen">
+	<link href="../../../assets/css/pages/formlayout.css" rel="stylesheet" type="text/css" />
+	<!--tagsinput-->
+    <link href="../../../assets/plugins/jquery-tags-input/jquery-tags-input.css" rel="stylesheet">
 	<!-- Date Time item CSS -->
 	<link rel="stylesheet" href="../../../assets/plugins/flatpicker/flatpickr.min.css">
 	<!-- favicon -->
@@ -225,7 +229,7 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a href="index.php?halaman=beranda" class="nav-link nav-toggle"> <i class="material-icons">account_circle</i>
+								<a href="index.php?halaman=members" class="nav-link nav-toggle"> <i class="material-icons">account_circle</i>
 									<span class="title">Members</span>
 								</a>
 							</li>
@@ -350,6 +354,24 @@
 						elseif($_GET["halaman"] == "staff-ok"){
 							include '_staff/__hapus-confirm.php';
 						}
+						elseif($_GET["halaman"] == "members"){
+							include '_members/__index.php';
+						}
+						elseif($_GET["halaman"] == "members-tambah"){
+							include '_members/__tambah.php';
+						}
+						elseif($_GET["halaman"] == "members-edit"){
+							include '_members/__edit.php';
+						}
+						elseif($_GET["halaman"] == "members-hapus"){
+							include '_members/__hapus.php';
+						}
+						elseif($_GET["halaman"] == "members-ok"){
+							include '_members/__hapus-confirm.php';
+						}
+						elseif($_GET["halaman"] == "members-kunci"){
+							include '_members/__locked.php';
+						}
 						elseif($_GET["halaman"] == "tutup-akun"){
 							include '__locked.php';
 						}
@@ -385,6 +407,11 @@
 	<script src="../../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 	<script src="../../../assets/plugins/sparkline/jquery.sparkline.min.js"></script>
 	<script src="../../../assets/js/pages/sparkline/sparkline-data.js"></script>
+	<script src="../../../assets/plugins/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+    <script src="../../../assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+    <script src="../../../assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker-init.js"></script>
+    <script src="../../../assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script src="../../../assets/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker-init.js"></script>
 	<!-- Common js-->
 	<script src="../../../assets/js/app.js"></script>
 	<script src="../../../assets/js/layout.js"></script>
@@ -401,9 +428,9 @@
 	<script src="../../../assets/plugins/morris/morris.min.js"></script>
 	<script src="../../../assets/plugins/morris/raphael-min.js"></script>
 	<script src="../../../assets/js/pages/chart/morris/morris_home_data.js"></script>
-	<!-- dropzone -->
-	<script src="../../../assets/plugins/dropzone/dropzone.js"></script>
-	<script src="../../../assets/plugins/dropzone/dropzone-call.js"></script>
+	<!--tags input-->
+    <script src="../../../assets/plugins/jquery-tags-input/jquery-tags-input.js"></script>
+    <script src="../../../assets/plugins/jquery-tags-input/jquery-tags-input-init.js"></script>
 	<!-- date and time 	 -->
 	<script src="../../../assets/plugins/flatpicker/flatpickr.min.js"></script>
 	<script src="../../../assets/js/pages/datetime/datetime-data.js"></script>
