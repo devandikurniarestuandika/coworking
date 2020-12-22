@@ -11,12 +11,17 @@
 
 ## COWORKING SPACE
 
-Tugas Proyek E-Commerce dihost disini | NIM : 18.12.0882
+Tugas Proyek E-Commerce dan Pemrogramman dihost disini | NIM : 18.12.0882
 
 ## UPDATE HISTORY
 
 - V1.0 Login Admin Fix
-- V1.0.0.1.41220 Admin Dashboard Added
+- V1.0.0.1.91220 Admin Dashboard + Staff Functional Added
+
+## DEMO WEBSITE
+
+Website: https://devandi.celalu.online/admin
+<br>Minta akses admin? Hubungi kami ke https://www.vandi.id/p/kontak.html
 
 ## CUPLIKAN LAYAR WEBSITE
 
