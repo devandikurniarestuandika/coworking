@@ -18,7 +18,7 @@ Tugas Proyek E-Commerce dan Pemrogramman dihost disini | NIM : 18.12.0882
 - V1.0 Login Admin Fix
 - V1.0.0.1.221220 Admin Dashboard + Members Functional Added
 
-## DEMO WEBSITE
+## DEMO WEBSITE (Update Tiap Minggu)
 
 Website: https://devandi.celalu.online/admin
 <br>Minta akses admin? Hubungi kami ke https://www.vandi.id/p/kontak.html
