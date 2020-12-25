@@ -35,9 +35,9 @@ if(isset($_POST["kirim"])) {
 								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
 										href="index.php?halaman=beranda">Dashboard</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
-								<li><a class="parent-item" href="index.php?halaman=members">members</a>&nbsp;<i class="fa fa-angle-right"></i>
+								<li><a class="parent-item" href="index.php?halaman=members">Pelanggan</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
-								<li class="active">Tambah members</li>
+								<li class="active">Tambah Pelanggan</li>
 							</ol>
 						</div>
                     </div>

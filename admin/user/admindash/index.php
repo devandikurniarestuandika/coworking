@@ -230,7 +230,7 @@
 							</li>
 							<li class="nav-item">
 								<a href="index.php?halaman=members" class="nav-link nav-toggle"> <i class="material-icons">account_circle</i>
-									<span class="title">Members</span>
+									<span class="title">Pelanggan</span>
 								</a>
 							</li>
 							<li class="nav-item">
@@ -244,83 +244,96 @@
 								</a>
 							</li>
 							<li class="nav-item">
-								<a href="index.php?halaman=beranda" class="nav-link nav-toggle"> <i class="material-icons">account_balance_wallet</i>
-									<span class="title">EPay</span>
-								</a>
-							</li>
-							<li class="nav-item">
 								<a href="javascript:;" class="nav-link nav-toggle">
-									<i class="material-icons">settings</i>
-									<span class="title">Tools</span>
+									<i class="material-icons">business_center</i>
+									<span class="title">Pemesanan</span>
 									<span class="arrow "></span>
 								</a>
 								<ul class="sub-menu">
 									<li class="nav-item">
-										<a href="javascript:;" class="nav-link nav-toggle">
-											<i class="fa fa-university"></i> Item 1
-											<span class="arrow"></span>
-										</a>
-										<ul class="sub-menu">
-											<li class="nav-item">
-												<a href="javascript:;" class="nav-link nav-toggle">
-													<i class="fa fa-bell-o"></i> Arrow Toggle
-													<span class="arrow "></span>
-												</a>
-												<ul class="sub-menu">
-													<li class="nav-item">
-														<a href="javascript:;" class="nav-link">
-															<i class="fa fa-calculator"></i> Sample Link 1</a>
-													</li>
-													<li class="nav-item">
-														<a href="#" class="nav-link">
-															<i class="fa fa-clone"></i> Sample Link 2</a>
-													</li>
-													<li class="nav-item">
-														<a href="#" class="nav-link">
-															<i class="fa fa-cogs"></i> Sample Link 3</a>
-													</li>
-												</ul>
-											</li>
-											<li class="nav-item">
-												<a href="#" class="nav-link">
-													<i class="fa fa-file-pdf-o"></i> Sample Link 1</a>
-											</li>
-											<li class="nav-item">
-												<a href="#" class="nav-link">
-													<i class="fa fa-rss"></i> Sample Link 2</a>
-											</li>
-											<li class="nav-item">
-												<a href="#" class="nav-link">
-													<i class="fa fa-hdd-o"></i> Sample Link 3</a>
-											</li>
-										</ul>
+										<a href="#" class="nav-link"> Ruangan </a>
 									</li>
 									<li class="nav-item">
-										<a href="javascript:;" class="nav-link nav-toggle">
-											<i class="fa fa-gavel"></i> Arrow Toggle
-											<span class="arrow"></span>
-										</a>
-										<ul class="sub-menu">
-											<li class="nav-item">
-												<a href="#" class="nav-link">
-													<i class="fa fa-paper-plane"></i> Sample Link 1</a>
-											</li>
-											<li class="nav-item">
-												<a href="#" class="nav-link">
-													<i class="fa fa-power-off"></i> Sample Link 1</a>
-											</li>
-											<li class="nav-item">
-												<a href="#" class="nav-link">
-													<i class="fa fa-recycle"></i> Sample Link 1
-												</a>
-											</li>
-										</ul>
-									</li>
-									<li class="nav-item">
-										<a href="#" class="nav-link">
-											<i class="fa fa-volume-up"></i> Item 3 </a>
+										<a href="#" class="nav-link"> Produk </a>
 									</li>
 								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="javascript:;" class="nav-link nav-toggle">
+									<i class="material-icons">vpn_key</i>
+									<span class="title">Manajemen</span>
+									<span class="arrow "></span>
+								</a>
+								<ul class="sub-menu">
+									<li class="nav-item">
+										<a href="#" class="nav-link"> Penjadwalan </a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link"> Lokasi </a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link"> Ruangan </a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="javascript:;" class="nav-link nav-toggle">
+									<i class="material-icons">account_balance_wallet</i>
+									<span class="title">E-Pay</span>
+									<span class="arrow "></span>
+								</a>
+								<ul class="sub-menu">
+									<li class="nav-item">
+										<a href="index.php?halaman=epay" class="nav-link"> Dasbor </a>
+									</li>
+									<li class="nav-item">
+										<a href="index.php?halaman=epay" class="nav-link"> Akun </a>
+									</li>
+									<li class="nav-item">
+										<a href="javascript:;" class="nav-link nav-toggle"> Kredit
+											<span class="arrow"></span>
+										</a>
+										<ul class="sub-menu">
+											<li class="nav-item">
+												<a href="#" class="nav-link"> Top Up</a>
+											</li>
+											<li class="nav-item">
+												<a href="#" class="nav-link"> Pengembalian</a>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item">
+										<a href="javascript:;" class="nav-link nav-toggle"> Riwayat
+											<span class="arrow"></span>
+										</a>
+										<ul class="sub-menu">
+											<li class="nav-item">
+												<a href="#" class="nav-link"> Transaksi Pemasukan</a>
+											</li>
+											<li class="nav-item">
+												<a href="#" class="nav-link"> Transaksi Pengeluaran</a>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item">
+										<a href="index.php?halaman=epay" class="nav-link"> Penarikan </a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a href="index.php?halaman=beranda" class="nav-link nav-toggle"> <i class="material-icons">inbox</i>
+									<span class="title">Pertanyaan</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="index.php?halaman=beranda" class="nav-link nav-toggle"> <i class="material-icons">feedback</i>
+									<span class="title">Umpan Balik</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="index.php?halaman=beranda" class="nav-link nav-toggle"> <i class="material-icons">settings</i>
+									<span class="title">Pengaturan</span>
+								</a>
 							</li>
 						</ul>
 					</div>
@@ -374,6 +387,9 @@
 						}
 						elseif($_GET["halaman"] == "tutup-akun"){
 							include '__locked.php';
+						}
+						elseif($_GET["halaman"] == "epay"){
+							include '_epay/__index.php';
 						}
 						elseif($_GET["halaman"] == "log-keluar"){
 							echo "<script>location='../../includes/logout.php';</script>";

@@ -7,111 +7,16 @@ if(!defined('Index')) {
 <div class="page-bar">
 						<div class="page-title-breadcrumb">
 							<div class=" pull-left">
-								<div class="page-title">Pengelolaan Pelanggan</div>
+								<div class="page-title">Dashboard E-Pay</div>
 							</div>
 							<ol class="breadcrumb page-breadcrumb pull-right">
 								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
 										href="index.php?halaman=beranda">Dashboard</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
-								<li><a class="parent-item" href="index.php?halaman=members">Pelanggan</a>&nbsp;<i class="fa fa-angle-right"></i>
+								<li><a class="parent-item" href="index.php?halaman=epay">E-Pay</a>&nbsp;<i class="fa fa-angle-right"></i>
 								</li>
-								<li class="active">Semua Pelanggan</li>
+								<li class="active">Dashbor E-Pay</li>
 							</ol>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-3 col-md-6 col-sm-12 col-12">
-							<div class="card">
-								<div class="panel-body">
-									<h3>Pelanggan Baru</h3>
-									<div
-										class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active">
-										<div class="progress-bar progress-bar-green width-100" role="progressbar"></div>
-									</div>
-									<span class="text-small margin-top-10 full-width">1+ Bulan ini</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 col-sm-12 col-12">
-							<div class="card">
-								<div class="panel-body">
-									<h3>Total Pelanggan</h3>
-									<?php
-										$ambil_all = $conn->query("SELECT * FROM members");
-										$total_pelanggan = mysqli_num_rows($ambil_all);
-									?>
-									<div
-										class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active">
-										<div class="progress-bar progress-bar-orange width-100" role="progressbar"></div>
-									</div>
-									<span class="text-small margin-top-10 full-width">
-										<?php echo $total_pelanggan; ?> Total Pelanggan</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 col-sm-12 col-12">
-							<div class="card">
-								<div class="panel-body">
-									<h3>Pelanggan Aktif</h3>
-									<?php
-										$ambil_aktif = $conn->query("SELECT * FROM members WHERE status LIKE 1");
-										$total_pelanggan_aktif = mysqli_num_rows($ambil_aktif);
-										$hitung_aktif = (100 * $total_pelanggan_aktif) / $total_pelanggan;
-									?>
-									<div
-										class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active">
-										<div class="progress-bar progress-bar-purple width-<?php
-										if ($hitung_aktif == "0") {
-											echo "0";
-										} elseif ($hitung_aktif >= 1 && $hitung_aktif <= 49) {
-											echo "40";
-										} else if ($hitung_aktif == 50) {
-											echo "50";
-										} else if ($hitung_aktif >= 51 && $hitung_aktif <= 69) {
-											echo "60";
-										} else if ($hitung_aktif >= 70 && $hitung_aktif <= 79) {
-											echo "80";
-										} else if ($hitung_aktif >= 80 && $hitung_aktif <= 100) {
-											echo "100";
-										}
-										?>" role="progressbar"></div>
-									</div>
-									<span class="text-small margin-top-10 full-width">
-										<?php echo $total_pelanggan_aktif; ?> Akun Aktif</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6 col-sm-12 col-12">
-							<div class="card">
-								<div class="panel-body">
-									<h3>Pelanggan Pasif</h3>
-									<?php
-										$ambil_pasif = $conn->query("SELECT * FROM members WHERE status LIKE 0");
-										$total_pelanggan_pasif = mysqli_num_rows($ambil_pasif);
-										$hitung_pasif = (100 * $total_pelanggan_pasif) / $total_pelanggan;
-									?>
-									<div
-										class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active">
-										<div class="progress-bar progress-bar-cyan width-<?php
-										if ($hitung_pasif == "0") {
-											echo "0";
-										} elseif ($hitung_pasif >= 1 && $hitung_pasif <= 49) {
-											echo "40";
-										} else if ($hitung_pasif == 50) {
-											echo "50";
-										} else if ($hitung_pasif >= 51 && $hitung_pasif <= 69) {
-											echo "60";
-										} else if ($hitung_pasif >= 70 && $hitung_pasif <= 79) {
-											echo "80";
-										} else if ($hitung_pasif >= 80 && $hitung_pasif <= 100) {
-											echo "100";
-										}
-										?>" role="progressbar"></div>
-									</div>
-									<span class="text-small margin-top-10 full-width">
-										<?php echo $total_pelanggan_pasif; ?> Akun Pasif</span>
-								</div>
-							</div>
 						</div>
 					</div>
 					<div class="tab-content tab-space">

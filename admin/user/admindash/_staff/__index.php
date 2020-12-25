@@ -19,6 +19,101 @@ if(!defined('Index')) {
 							</ol>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-lg-3 col-md-6 col-sm-12 col-12">
+							<div class="card">
+								<div class="panel-body">
+									<h3>Status Akun</h3>
+									<div
+										class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active">
+										<div class="progress-bar progress-bar-green width-100" role="progressbar"></div>
+									</div>
+									<span class="text-small margin-top-10 full-width">Aktif</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-12 col-12">
+							<div class="card">
+								<div class="panel-body">
+									<h3>Total Staff</h3>
+									<?php
+										$ambil_all = $conn->query("SELECT * FROM users");
+										$total_staff = mysqli_num_rows($ambil_all);
+									?>
+									<div
+										class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active">
+										<div class="progress-bar progress-bar-orange width-100" role="progressbar"></div>
+									</div>
+									<span class="text-small margin-top-10 full-width">
+										<?php echo $total_staff; ?> Total Staff</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-12 col-12">
+							<div class="card">
+								<div class="panel-body">
+									<h3>Staff Aktif</h3>
+									<?php
+										$ambil_aktif = $conn->query("SELECT * FROM users WHERE status LIKE 1");
+										$total_staff_aktif = mysqli_num_rows($ambil_aktif);
+										$hitung_aktif = (100 * $total_staff_aktif) / $total_staff;
+									?>
+									<div
+										class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active">
+										<div class="progress-bar progress-bar-purple width-<?php
+										if ($hitung_aktif == "0") {
+											echo "0";
+										} elseif ($hitung_aktif >= 1 && $hitung_aktif <= 49) {
+											echo "40";
+										} else if ($hitung_aktif == 50) {
+											echo "50";
+										} else if ($hitung_aktif >= 51 && $hitung_aktif <= 69) {
+											echo "60";
+										} else if ($hitung_aktif >= 70 && $hitung_aktif <= 79) {
+											echo "80";
+										} else if ($hitung_aktif >= 80 && $hitung_aktif <= 100) {
+											echo "100";
+										}
+										?>" role="progressbar"></div>
+									</div>
+									<span class="text-small margin-top-10 full-width">
+										<?php echo $total_staff_aktif; ?> Akun Aktif</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-sm-12 col-12">
+							<div class="card">
+								<div class="panel-body">
+									<h3>Staff Pasif</h3>
+									<?php
+										$ambil_pasif = $conn->query("SELECT * FROM users WHERE status LIKE 0");
+										$total_staff_pasif = mysqli_num_rows($ambil_pasif);
+										$hitung_pasif = (100 * $total_staff_pasif) / $total_staff;
+									?>
+									<div
+										class="progressbar-xs progress-rounded progress-striped progress ng-isolate-scope active">
+										<div class="progress-bar progress-bar-cyan width-<?php
+										if ($hitung_pasif == "0") {
+											echo "0";
+										} elseif ($hitung_pasif >= 1 && $hitung_pasif <= 49) {
+											echo "40";
+										} else if ($hitung_pasif == 50) {
+											echo "50";
+										} else if ($hitung_pasif >= 51 && $hitung_pasif <= 69) {
+											echo "60";
+										} else if ($hitung_pasif >= 70 && $hitung_pasif <= 79) {
+											echo "80";
+										} else if ($hitung_pasif >= 80 && $hitung_pasif <= 100) {
+											echo "100";
+										}
+										?>" role="progressbar"></div>
+									</div>
+									<span class="text-small margin-top-10 full-width">
+										<?php echo $total_staff_pasif; ?> Akun Pasif</span>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div class="tab-content tab-space">
 						<div class="tab-pane active show" id="tab1">
 						<div class="row">
