@@ -44,10 +44,15 @@ class Login{
     $_SESSION["no_ktp"] = $row["no_ktp"];
     $_SESSION["nama"] = $row["nama"];
     $_SESSION["password"] = $row["password"];
+    $_SESSION["tgl_lahir"] = $row["tgl_lahir"];
+    $_SESSION["bio"] = $row["bio"];
+    $_SESSION["kelamin"] = $row["kelamin"];
+    $_SESSION["alamat"] = $row["alamat"];
     $_SESSION["role"] = $row["role"];
     $_SESSION["status"] = $row["status"];
     $_SESSION["foto"] = $row["foto"];
     $_SESSION["created_at"] = $row["created_at"];
+    $_SESSION["updated_at"] = $row["updated_at"];
   }
   public function UserType(){
       //if user role is 1, redirect to admin page
@@ -85,6 +90,30 @@ class PassFunctions{
     echo $pass;
   }
 }
+class KelahiranFunctions{
+  public function Kelahiran(){
+    $kelahiran = $_SESSION["tgl_lahir"];
+    echo $kelahiran;
+  }
+}
+class BioFunctions{
+  public function Bio(){
+    $bio = $_SESSION["bio"];
+    echo $bio;
+  }
+}
+class KelaminFunctions{
+  public function Kelamin(){
+    $kelamin = $_SESSION["kelamin"];
+    echo $kelamin;
+  }
+}
+class AlamatFunctions{
+  public function Alamat(){
+    $alamat = $_SESSION["alamat"];
+    echo $alamat;
+  }
+}
 class FotoFunctions{
   public function Foto(){
     $foto = $_SESSION["foto"];
@@ -97,4 +126,11 @@ class CreatedatFunctions{
     echo $createdat;
   }
 }
+class UpdatedatFunctions{
+  public function Updatedat(){
+    $updatedat = $_SESSION["updated_at"];
+    echo $updatedat;
+  }
+}
+
 ?>

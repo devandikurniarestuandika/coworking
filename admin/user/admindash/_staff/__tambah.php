@@ -13,14 +13,15 @@ if(isset($_POST["kirim"])) {
 	$ikelahiran = date('Y-m-d', strtotime($_POST['kelahiran']));
 	$ikelamin = $_POST['kelamin'];
     $iperan = $_POST['peran'];
-    $istatus = 1;
+	$istatus = 1;
+	$idibuat = date("Y-m-d");
 
     $ambil = $conn->query("SELECT * FROM users WHERE username='$iusername'");
     $yangcocok = $ambil->num_rows;
     if($yangcocok == 1){
         $alert = 1;
     } else {
-        $conn->query("INSERT INTO users(no_ktp, username, nama, password, tgl_lahir, bio, kelamin, alamat, role, status) VALUES('$iktp', '$iusername', '$inama', '$ipass', '$ikelahiran', 'Tidak ada biografi tertulis.', '$ikelamin', 'Alamat tidak dimasukkan', '$iperan', '$istatus')");
+        $conn->query("INSERT INTO users(no_ktp, username, nama, password, tgl_lahir, bio, kelamin, alamat, role, status, created_at) VALUES('$iktp', '$iusername', '$inama', '$ipass', '$ikelahiran', 'Tidak ada biografi tertulis.', '$ikelamin', 'Alamat tidak dimasukkan', '$iperan', '$istatus', '$idibuat')");
         echo "<script>window.location='index.php?halaman=staff';</script>";
     }
 }

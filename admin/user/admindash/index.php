@@ -287,7 +287,7 @@
 										<a href="index.php?halaman=epay" class="nav-link"> Dasbor </a>
 									</li>
 									<li class="nav-item">
-										<a href="index.php?halaman=epay" class="nav-link"> Akun </a>
+										<a href="index.php?halaman=epay-akun" class="nav-link"> Akun </a>
 									</li>
 									<li class="nav-item">
 										<a href="javascript:;" class="nav-link nav-toggle"> Kredit
@@ -346,12 +346,15 @@
 				<!-- inikonten -->
 				<?php
 					if(isset($_GET["halaman"])){
+						//Profil Pengguna
 						if($_GET["halaman"] == "profil-pengguna"){
 							include '__user-profile.php';
 						}
+						//Beranda
 						elseif($_GET["halaman"] == "beranda"){
 							include '__home.php';
 						}
+						//Staff
 						elseif($_GET["halaman"] == "staff"){
 							include '_staff/__index.php';
 						}
@@ -367,6 +370,7 @@
 						elseif($_GET["halaman"] == "staff-ok"){
 							include '_staff/__hapus-confirm.php';
 						}
+						//Members
 						elseif($_GET["halaman"] == "members"){
 							include '_members/__index.php';
 						}
@@ -385,12 +389,21 @@
 						elseif($_GET["halaman"] == "members-kunci"){
 							include '_members/__locked.php';
 						}
+						//Tutup Akun Staff
 						elseif($_GET["halaman"] == "tutup-akun"){
 							include '__locked.php';
 						}
+						//Epay
 						elseif($_GET["halaman"] == "epay"){
 							include '_epay/__index.php';
 						}
+						elseif($_GET["halaman"] == "epay-akun"){
+							include '_epay/__daftar-akun.php';
+						}
+						elseif($_GET["halaman"] == "epay-akun-edit"){
+							include '_epay/__daftar-akun-edit.php';
+						}
+						//Log Keluar
 						elseif($_GET["halaman"] == "log-keluar"){
 							echo "<script>location='../../includes/logout.php';</script>";
 						}

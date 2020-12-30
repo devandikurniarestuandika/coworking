@@ -11,6 +11,7 @@ $kelaminfunc = new KelaminFunctions;
 $alamatfunc = new AlamatFunctions;
 $fotofunc = new FotoFunctions;
 $createdfunc = new CreatedatFunctions;
+$updatedfunc = new UpdatedatFunctions;
 $chss = new Login;
 $chss->SessionCheck();
 //Check user role is true

@@ -192,8 +192,12 @@ if(isset($_POST["kirim4"])) {
 												<div class="profile-desc-item pull-right">Aktif</div>
 											</li>
 											<li class="list-group-item">
-												<b>Perubahan Akun </b>
+												<b>Akun Dibuat </b>
 												<div class="profile-desc-item pull-right"><?php $createdfunc->Createdat(); ?></div>
+											</li>
+											<li class="list-group-item">
+												<b>Perubahan Akun </b>
+												<div class="profile-desc-item pull-right"><?php $updatedfunc->Updatedat(); ?></div>
 											</li>
 										</ul>
 									</div>
