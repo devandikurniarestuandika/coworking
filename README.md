@@ -21,7 +21,7 @@ Tugas Proyek E-Commerce dan Pemrogramman dihost disini | NIM : 18.12.0882
 ## DEMO WEBSITE (Update Tiap Minggu)
 
 Website login pelanggan: https://devandi.celalu.online/c/s.php?auth=masuk
-Website login admin: https://devandi.celalu.online/admin/s.php?auth=masuk
+<br>Website login admin: https://devandi.celalu.online/admin/s.php?auth=masuk
 <br>Minta akses admin? Hubungi kami ke https://www.vandi.id/p/kontak.html
 
 ## CUPLIKAN LAYAR WEBSITE
